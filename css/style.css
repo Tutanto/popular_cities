@@ -4,17 +4,17 @@
     box-sizing: border-box;
 }
 
-html{
+html {
     scroll-behavior: smooth;
     /* font-family: 'Poppins', sans-serif; */
     font-family: 'Roboto', sans-serif;
 }
 
-img{
+img {
     display: block;
 }
 
-.header{
+.header {
     background-color: Black;
 }
 
@@ -29,8 +29,7 @@ img{
     background-image: url(https://cdn.pixabay.com/photo/2021/10/28/09/59/city-6749295_960_720.jpg);
 }
 
-.toggle-button-cover
-{
+.toggle-button-cover {
     width: 100%;
     margin: 0 auto;
     position: relative;
@@ -38,8 +37,7 @@ img{
     height: 100px;
 }
 
-.button-cover
-{
+.button-cover {
     height: 60px;
     margin: 20px;
     background-color: #fff;
@@ -47,8 +45,7 @@ img{
     border-radius: 10px;
 }
 
-.button-cover:before
-{
+.button-cover:before {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -58,8 +55,7 @@ img{
     padding: 5px;
 }
 
-.button-cover, .knobs, .layer
-{
+.button-cover, .knobs, .layer {
     position: absolute;
     top: 0;
     right: 0;
@@ -67,8 +63,7 @@ img{
     left: 0;
 }
 
-.button
-{
+.button {
     position: relative;
     top: 50%;
     width: 220px;
@@ -77,13 +72,11 @@ img{
     overflow: hidden;
 }
 
-.button.b2
-{
+.button.b2 {
     border-radius: 2px;
 }
 
-.checkbox
-{
+.checkbox {
     position: relative;
     width: 100%;
     height: 100%;
@@ -94,21 +87,18 @@ img{
     z-index: 3;
 }
 
-.knobs
-{
+.knobs {
     z-index: 2;
 }
 
-.layer
-{
+.layer {
     width: 100%;
     background-color: #ebf7fc;
     transition: 0.3s ease all;
     z-index: 1;
 }
 
-#button-show .knobs:before
-{
+#button-show .knobs:before {
     content: 'Mostra tutte';
     position: absolute;
     top: 4px;
@@ -126,32 +116,84 @@ img{
     transition: 0.3s ease all, left 0.3s;
 }
 
-#button-show .checkbox:active + .knobs:before
-{
+#button-show .checkbox:active+.knobs:before {
     width: 100px;
 }
 
-#button-show .checkbox:checked:active + .knobs:before
-{
+#button-show .checkbox:checked:active+.knobs:before {
     margin-left: -26px;
 }
 
-#button-show .checkbox:checked + .knobs:before
-{
+#button-show .checkbox:checked+.knobs:before {
     content: 'Mostra solo popolari';
     left: 108px;
     background-color: #F44336;
 }
 
-#button-show .checkbox:checked ~ .layer
-{
+#button-show .checkbox:checked~.layer {
     background-color: #fcebeb;
 }
 
-/* MOBILE */
-@media all and (max-width: 990px){
+.wrapper__cities {
+    margin: 20px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 
-    body{
+.city {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 7.5px;
+    padding: 10px;
+
+    width: 250px;
+    height: 320px;
+
+    border-radius: 15px;
+
+    opacity: 0.78;
+    cursor: pointer;
+    transition: all 0.35s;
+}
+
+.city:hover {
+    transform: scale(0.9);
+}
+
+.city:active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.city img {
+    position: absolute;
+    border-radius: 15px  15px 0px 0px;
+    top: 0;
+    width: 100%;
+    height: 50%;
+}
+
+.city h3 {
+    position: absolute;
+    top: 60%;
+    color: #fff;
+}
+
+.city p {
+    position: absolute;
+    top: 70%;
+    color: #fff;
+    margin: 10px;
+}
+
+/* MOBILE */
+@media all and (max-width: 990px) {
+
+    body {
         font-size: 16px;
         line-height: 24px;
     }
@@ -161,10 +203,12 @@ img{
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: center;
-        }
+    }
+
     .title h1 {
         font-size: 30px;
         line-height: 50px;
         padding-bottom: 10px;
     }
+
 }
