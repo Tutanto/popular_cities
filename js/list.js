@@ -2,7 +2,7 @@ import { cutPhrase, query } from "./utils.js"
 /**
  * Remove all children from container
  *
- * @param {string} [parent=query(".wrapper__cities")] container (default wrapper__cities)
+ * @param {*} [parent=query(".wrapper__cities")] container (default wrapper__cities)
  */
 function clearView(parent = query(".wrapper__cities")) {
     while (parent.firstChild) {
@@ -85,7 +85,7 @@ function renderProducts(listItems, popular = null, container = query(".wrapper__
             setTimeout(() => {
                 productContainer(container, product.cover_image_url, product.name, product.content);
             }, setTimer);
-            setTimer += 200;
+            setTimer += 50;
         });
     } else {
         const top_cities = listItems.filter(item => item.show_in_popular);
@@ -93,7 +93,7 @@ function renderProducts(listItems, popular = null, container = query(".wrapper__
             setTimeout(() => {
                 productContainer(container, product.cover_image_url, product.name, product.content);
             }, setTimer);
-            setTimer += 200;
+            setTimer += 100;
         });
     }
 }
