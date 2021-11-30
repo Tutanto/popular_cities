@@ -19,7 +19,7 @@ function clearView(parent = query(".wrapper__cities")) {
  * @param {*} textDescription
  */
 function productContainer(parent, imgUrl, productTitle, textDescription) {
-    const colors = ["#d00000", "#ac2232", "#884463", "#646694", "#3f88c5", "#032b43", "#136f63"]
+    const colors = ["#bd0000", "#d00000", "#ac2232", "#884463", "#646694", "#3f88c5", "#215a84", "#032b43", "#0b4d53", "#136f63"]
     let i = parent.children.length % colors.length;
     const product = document.createElement("div");
     product.className = "city";
