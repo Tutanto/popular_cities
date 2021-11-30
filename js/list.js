@@ -74,11 +74,11 @@ function createText(parent, productTitle, textDescription) {
  *Loops over array of objects and creates product cards
  *
  * @param {*} listItems array of objects
- * @param {*} [popular=null] boolean (default null). Set true to get popular cities
+ * @param {*} [popular=null] boolean (default true). Set true to get popular cities
  * @param {number} [time=0] Timeout interval
  * @param {string} [container=query(".wrapper__cities")] Wrapper container where to insert cards (default wrapper__cities)
  */
-function renderProducts(listItems, popular = null, time=0, container = query(".wrapper__cities")) {
+function renderProducts(listItems, popular = true, time=0, container = query(".wrapper__cities")) {
     clearView(container);
     let setTimer = 0;
     if (!popular) {
