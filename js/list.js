@@ -1,11 +1,23 @@
 import { cutPhrase, query } from "./utils.js"
-
+/**
+ * Remove all children from container
+ *
+ * @param {string} [parent=query(".wrapper__cities")] container (default wrapper__cities)
+ */
 function clearView(parent = query(".wrapper__cities")) {
     while (parent.firstChild) {
         parent.firstChild.remove()
     }
 }
 
+/**
+ *Create card structure
+ *
+ * @param {*} parent
+ * @param {*} imgUrl
+ * @param {*} productTitle
+ * @param {*} textDescription
+ */
 function productContainer(parent, imgUrl, productTitle, textDescription) {
     const colors = ["#d00000", "#ac2232", "#884463", "#646694", "#3f88c5", "#032b43", "#136f63"]
     let i = parent.children.length % colors.length;
@@ -22,6 +34,13 @@ function productContainer(parent, imgUrl, productTitle, textDescription) {
     }, 600)
 }
 
+/**
+ *Add image to card
+ *
+ * @param {*} parent
+ * @param {*} imgUrl
+ * @param {*} productTitle
+ */
 function createImg(parent, imgUrl, productTitle) {
     const image = document.createElement("img");
     image.src = imgUrl;
@@ -30,20 +49,34 @@ function createImg(parent, imgUrl, productTitle) {
     parent.appendChild(image);
 }
 
+/**
+ *Add text (title & description) to card
+ *
+ * @param {*} parent
+ * @param {*} productTitle
+ * @param {*} textDescription
+ */
 function createText(parent, productTitle, textDescription) {
     const title = document.createElement("h3");
     title.textContent = productTitle;
 
     const description = document.createElement("p");
-    // console.log(typeof textDescription);
-    if (textDescription.split(' ').length > 7) {
-        textDescription = cutPhrase(textDescription) + " ...";
+    let nWords = 7;
+    if (textDescription.split(' ').length > nWords) {
+        textDescription = cutPhrase(textDescription, nWords) + " ...";
     }
     description.textContent = textDescription;
 
     parent.append(title, description);
 }
 
+/**
+ * Loops over array of objects and creates product cards
+ *
+ * @param {*} listItems array of objects
+ * @param {*} [popular=null] boolean (default null). Set true to get popular cities
+ * @param {string} [container=query(".wrapper__cities")] Wrapper container where to insert cards (default wrapper__cities)
+ */
 function renderProducts(listItems, popular = null, container = query(".wrapper__cities")) {
     clearView(container);
     let setTimer = 0;

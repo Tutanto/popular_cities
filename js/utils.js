@@ -5,10 +5,16 @@ const query = (selector) => document.querySelector(selector);
  */
 const API = "https://api.musement.com/api/v3/cities.json";
 
-
-function cutPhrase(text) {
-    const first7 = text.split(' ').slice(0, 7).join(' ');
-    return first7;
+/**
+ *Selects first nWords words from string
+ *
+ * @param {string} text
+ * @param {int} nWords
+ * @return {*} 
+ */
+function cutPhrase(text,nWords) {
+    const firstNwords = text.split(' ').slice(0, nWords).join(' ');
+    return firstNwords;
 }
 
 export { query, API, cutPhrase }
