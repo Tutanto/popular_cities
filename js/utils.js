@@ -7,8 +7,8 @@ const API = "https://api.musement.com/api/v3/cities.json";
 
 
 function cutPhrase(text) {
-    const first10 = text.split(' ').slice(0, 10).join(' ');
-    return first10;
+    const first7 = text.split(' ').slice(0, 7).join(' ');
+    return first7;
 }
 
 function getRandomInt(max) {
