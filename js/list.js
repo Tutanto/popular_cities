@@ -32,7 +32,7 @@ function createText(parent, productTitle, textDescription) {
 
     const description = document.createElement("p");
     // console.log(typeof textDescription);
-    if (textDescription.split(' ').length > 10) {
+    if (textDescription.split(' ').length > 7) {
         textDescription = cutPhrase(textDescription) + " ...";
     }
     description.textContent = textDescription;
@@ -48,7 +48,7 @@ function renderProducts(listItems, popular = null, container = query(".wrapper__
     } else {
         const top_cities = listItems.filter(item => item.show_in_popular);
         top_cities.map((product) => {
-            productContainer(container, product.cover_image_url, product.name, product.meta_description);
+            productContainer(container, product.cover_image_url, product.name, product.content);
         });
     }
 }
