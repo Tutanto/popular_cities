@@ -1,6 +1,6 @@
-import { cutPhrase, query, getRandomInt } from "./utils.js"
+import { cutPhrase, query } from "./utils.js"
 
-function clearView(parent) {
+function clearView(parent = query(".wrapper__cities")) {
     while (parent.firstChild) {
         parent.firstChild.remove()
     }
@@ -41,6 +41,7 @@ function createText(parent, productTitle, textDescription) {
 }
 
 function renderProducts(listItems, popular = null, container = query(".wrapper__cities")) {
+    clearView(container);
     if (!popular) {
         listItems.map((product) => {
             productContainer(container, product.cover_image_url, product.name, product.content);

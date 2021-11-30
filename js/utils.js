@@ -11,8 +11,4 @@ function cutPhrase(text) {
     return first7;
 }
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-}
-
-export { query, API, cutPhrase, getRandomInt }
+export { query, API, cutPhrase }
