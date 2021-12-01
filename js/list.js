@@ -25,8 +25,7 @@ function productContainer(parent, imgUrl, productTitle, textDescription, product
     product.className = "city";
     product.classList.add('hidden');
     product.id = productId;
-    product.style.backgroundColor = colors[i]
-
+    product.style.backgroundColor = colors[i];
     createImg(product, imgUrl, productTitle);
     createText(product, productTitle, textDescription);
     parent.appendChild(product);

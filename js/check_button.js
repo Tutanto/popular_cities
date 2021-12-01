@@ -6,11 +6,11 @@ import { renderProducts } from "./list.js";
  *
  * @param {*} listItems
  */
-function button(listItems) {
+function check_button(listItems) {
     const checkBtn = query(".checkbox")
     checkBtn.addEventListener('click', () => {
         checkBtn.checked ? renderProducts(listItems, false) : renderProducts(listItems);
     });
 }
 
-export { button }
+export { check_button }

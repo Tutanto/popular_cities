@@ -1,6 +1,6 @@
 import { API } from "./utils.js";
 import { renderProducts } from "./list.js";
-import { button } from "./button.js";
+import { check_button } from "./check_button.js";
 import { modal } from "./modal.js";
 
 const getCitiesList = async () => {
@@ -8,7 +8,7 @@ const getCitiesList = async () => {
     const data = await res.json();
     productsList = data;
     renderProducts(productsList);
-    button(productsList);
+    check_button(productsList);
     modal(productsList);
 };
 
