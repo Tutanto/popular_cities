@@ -18,12 +18,13 @@ function clearView(parent = query(".wrapper__cities")) {
  * @param {*} productTitle
  * @param {*} textDescription
  */
-function productContainer(parent, imgUrl, productTitle, textDescription) {
+function productContainer(parent, imgUrl, productTitle, textDescription, productId) {
     const colors = ["#bd0000", "#d00000", "#ac2232", "#884463", "#646694", "#3f88c5", "#215a84", "#032b43", "#0b4d53", "#136f63"]
     let i = parent.children.length % colors.length;
     const product = document.createElement("div");
     product.className = "city";
     product.classList.add('hidden');
+    product.id = productId;
     product.style.backgroundColor = colors[i]
 
     createImg(product, imgUrl, productTitle);
@@ -78,13 +79,13 @@ function createText(parent, productTitle, textDescription) {
  * @param {number} [time=0] Timeout interval
  * @param {string} [container=query(".wrapper__cities")] Wrapper container where to insert cards (default wrapper__cities)
  */
-function renderProducts(listItems, popular = true, time=0, container = query(".wrapper__cities")) {
+function renderProducts(listItems, popular = true, time = 0, container = query(".wrapper__cities")) {
     clearView(container);
     let setTimer = 0;
     if (!popular) {
         listItems.map((product) => {
             setTimeout(() => {
-                productContainer(container, product.cover_image_url, product.name, product.content);
+                productContainer(container, product.cover_image_url, product.name, product.content, product.id);
             }, setTimer);
             setTimer += time;
         });
@@ -92,11 +93,11 @@ function renderProducts(listItems, popular = true, time=0, container = query(".w
         const top_cities = listItems.filter(item => item.show_in_popular);
         top_cities.map((product) => {
             setTimeout(() => {
-                productContainer(container, product.cover_image_url, product.name, product.content);
+                productContainer(container, product.cover_image_url, product.name, product.content, product.id);
             }, setTimer);
             setTimer += time;
         });
     }
 }
 
-export { clearView, renderProducts }
+export { clearView, renderProducts, createImg }
