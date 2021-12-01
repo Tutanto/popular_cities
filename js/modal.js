@@ -22,12 +22,17 @@ function addTitle(parent, name, country) {
 function initMap(parent, latitude, longitude) {
     const map = document.createElement("a");
     const img = document.createElement("img");
+    const mapOverlay = document.createElement('div');
+    mapOverlay.className = "map-overlay";
     map.classList.add("map");
     map.href = `http://maps.google.com/maps?z=4&t=m&q=loc:${latitude}+${longitude}`
+    map.target = `_blank`
     img.src = "https://cdn.pixabay.com/photo/2019/09/22/16/20/location-4496459_960_720.png"
     img.alt = "world map"
+    mapOverlay.textContent = `Click to open map`
     
     map.append(img);
+    map.appendChild(mapOverlay);
     parent.append(map);
 }
 

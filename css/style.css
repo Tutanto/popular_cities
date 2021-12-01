@@ -261,6 +261,28 @@ img {
     height: 320px;
 }
 
+.modal .map .map-overlay {
+    position: absolute;
+    width: 320px;
+    background-color: rgba(255, 255, 255, 0.6);
+    bottom: 10%;
+    left: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+    padding: 0px 10px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.modal .map:hover .map-overlay {
+    z-index: 1;
+    padding: 10px 10px;
+    max-height: 1000px;
+}
+
 .modal_button {
     position: absolute;
     top: 91%;
