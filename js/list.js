@@ -28,9 +28,6 @@ function productContainer(parent, imgUrl, productTitle, textDescription, product
     createImg(product, imgUrl, productTitle);
     createText(product, productTitle, textDescription);
     parent.appendChild(product);
-    setTimeout(() => {
-        product.classList.remove('hidden');
-    }, 600)
 }
 
 /**
