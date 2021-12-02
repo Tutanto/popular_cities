@@ -332,6 +332,22 @@ img {
     color: black;
 }
 
+footer {
+    background-color: black;
+    padding: 10px 50px;
+    text-align: center;
+    color: white;
+}
+
+footer a {
+    color: white;
+}
+
+footer a:hover {
+    color: red;
+    text-decoration: none;
+}
+
 @keyframes loading {
     0% {
         transform: rotateZ(0deg);
