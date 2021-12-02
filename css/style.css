@@ -180,11 +180,6 @@ img {
     transition: all 0.35s ease;
 }
 
-.city.hidden {
-    opacity: 0;
-    transform: scale(0);
-}
-
 .city:hover {
     transform: scale(0.9);
 }
@@ -274,6 +269,7 @@ img {
     padding: 0px 10px;
     max-height: 0px;
     overflow: hidden;
+    color: #1a7c7b
     transition: all 0.5s ease;
 }
 
