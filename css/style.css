@@ -200,13 +200,13 @@ img {
 
 .city h3 {
     position: absolute;
-    top: 60%;
+    top: 55%;
     color: #fff;
 }
 
 .city p {
     position: absolute;
-    top: 70%;
+    top: 65%;
     color: #fff;
     margin: 15px;
 }
@@ -377,6 +377,10 @@ footer a:hover {
         font-size: 30px;
         line-height: 50px;
         padding-bottom: 10px;
+    }
+
+    .city p {
+        top: 60%;
     }
 
 }
