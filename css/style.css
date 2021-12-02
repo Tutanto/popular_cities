@@ -301,24 +301,33 @@ img {
     color: black;
 }
 
+.wrapper__show_button {
+    display: flex;
+    justify-content: center;
+}
+
 #show_button {
     background-color: black;
     border: 2px black solid;
     color: white;
     margin: 10px;
-    margin-left: auto;
-    margin-right: auto;
     padding: 10px 30px;
-    display: block;
     border-radius: 10px;
     text-decoration: none;
     cursor: pointer;
     font-size: 20px;
     line-height: 30px;
+    opacity: 0.6;
+    pointer-events: none;
     transition: all 0.3s ease-out;
 }
 
-#show_button:hover{
+#show_button.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#show_button:hover {
     background-color: white;
     color: black;
 }

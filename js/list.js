@@ -74,6 +74,8 @@ function createText(parent, productTitle, textDescription) {
  *
  * @param {*} listItems array of objects
  * @param {*} [popular=null] boolean (default true). Set true to get popular cities
+ * @param {int} [start] index of first element of listItems to render
+ * @param {int} [end] index of last element of listItems to render
  * @param {string} [container=query(".wrapper__cities")] Wrapper container where to insert cards (default wrapper__cities)
  */
 function renderProducts(listItems, popular = true, start = 0, end = 10, container = query(".wrapper__cities")) {
@@ -85,7 +87,6 @@ function renderProducts(listItems, popular = true, start = 0, end = 10, containe
         });
     } else {
         let top_cities = listItems.filter(item => item.show_in_popular);
-        console.log(top_cities)
         filter_list = top_cities.filter((item, index) => index > start-1 && index < end);
         filter_list.map((product) => {
             productContainer(container, product.cover_image_url, product.name, product.content, product.id);

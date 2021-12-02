@@ -1,6 +1,12 @@
 import { query } from "./utils.js"
 import { createImg } from "./list.js"
 
+/**
+ *Create modal structure
+ *
+ * @param {object} product Single card object
+ * @param {*} color
+ */
 function createModal(product, color) {
     const modal = document.createElement('div');
     modal.classList.add("modal")
@@ -13,12 +19,26 @@ function createModal(product, color) {
 
 }
 
+/**
+ *Add text to modal
+ *
+ * @param {*} parent
+ * @param {*} name
+ * @param {*} country
+ */
 function addTitle(parent, name, country) {
     const title = document.createElement("h3");
     title.textContent = `${name} - ${country}`;
     parent.append(title);
 }
 
+/**
+ *Add link to Google Map coordinates
+ *
+ * @param {*} parent
+ * @param {*} latitude
+ * @param {*} longitude
+ */
 function initMap(parent, latitude, longitude) {
     const map = document.createElement("a");
     const img = document.createElement("img");
@@ -36,6 +56,11 @@ function initMap(parent, latitude, longitude) {
     parent.append(map);
 }
 
+/**
+ *Create close button in modal
+ *
+ * @param {*} parent
+ */
 function makeBtn(parent){
     const btn = document.createElement("button");
     btn.classList.add("modal_button");
@@ -46,6 +71,12 @@ function makeBtn(parent){
     },{once:true})
 }
 
+/**
+ *Add event listener to all cities cards. Allows to open modal on click
+ *
+ * @param {array} elements array of cities
+ * @param {string} [container=query(".wrapper__cities")]
+ */
 function modal(elements, container = query(".wrapper__cities")) {
     container.addEventListener('click', (event) => {
 

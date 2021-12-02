@@ -1,3 +1,8 @@
+/**
+ *Short for querySelector
+ *
+ * @param {string} selector
+ */
 const query = (selector) => document.querySelector(selector);
 
 /**
