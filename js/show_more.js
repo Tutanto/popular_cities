@@ -6,16 +6,15 @@ import { renderProducts } from "./list.js"
  *
  * @param {array} products array of cities
  */
-function show_more(products) {
+function show_more(products, container = query(".wrapper__cities")) {
     const showBtn = query("#show_button")
     const check = query(".checkbox")
     showBtn.classList.add("active")
     let popular = undefined;
-    let index = 10;
     showBtn.addEventListener("click", ()=>{
         check.checked ? popular = false : popular = true;
+        let index = container.children.length
         renderProducts(products, popular, index, index+10)
-        index += 10;
     });
 
 }
