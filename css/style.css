@@ -15,6 +15,7 @@ img {
 }
 
 .header {
+    padding-top: 10px;
     background-color: Black;
 }
 
@@ -269,7 +270,7 @@ img {
     padding: 0px 10px;
     max-height: 0px;
     overflow: hidden;
-    color: #1a7c7b
+    color: #1a7c7b;
     transition: all 0.5s ease;
 }
 
@@ -296,6 +297,28 @@ img {
 }
 
 .modal_button:hover {
+    background-color: white;
+    color: black;
+}
+
+#show_button {
+    background-color: black;
+    border: 2px black solid;
+    color: white;
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 30px;
+    display: block;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 30px;
+    transition: all 0.3s ease-out;
+}
+
+#show_button:hover{
     background-color: white;
     color: black;
 }
