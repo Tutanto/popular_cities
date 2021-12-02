@@ -23,7 +23,6 @@ function productContainer(parent, imgUrl, productTitle, textDescription, product
     let i = parent.children.length % colors.length;
     const product = document.createElement("div");
     product.className = "city";
-    product.classList.add('hidden');
     product.id = productId;
     product.style.backgroundColor = colors[i];
     createImg(product, imgUrl, productTitle);
@@ -61,7 +60,7 @@ function createText(parent, productTitle, textDescription) {
     title.textContent = productTitle;
 
     const description = document.createElement("p");
-    let nWords = 7;
+    let nWords = 15;
     if (textDescription.split(' ').length > nWords) {
         textDescription = cutPhrase(textDescription, nWords) + " ...";
     }
@@ -75,26 +74,22 @@ function createText(parent, productTitle, textDescription) {
  *
  * @param {*} listItems array of objects
  * @param {*} [popular=null] boolean (default true). Set true to get popular cities
- * @param {number} [time=0] Timeout interval
+ * @param {int} [start] index of first element of listItems to render
+ * @param {int} [end] index of last element of listItems to render
  * @param {string} [container=query(".wrapper__cities")] Wrapper container where to insert cards (default wrapper__cities)
  */
-function renderProducts(listItems, popular = true, time = 0, container = query(".wrapper__cities")) {
-    clearView(container);
-    let setTimer = 0;
+function renderProducts(listItems, popular = true, start = 0, end = 10, container = query(".wrapper__cities")) {
+    let filter_list = [];
     if (!popular) {
-        listItems.map((product) => {
-            setTimeout(() => {
-                productContainer(container, product.cover_image_url, product.name, product.content, product.id);
-            }, setTimer);
-            setTimer += time;
+        filter_list = listItems.filter((item, index) => index > start-1 && index < end);
+        filter_list.map((product) => {
+            productContainer(container, product.cover_image_url, product.name, product.content, product.id);
         });
     } else {
-        const top_cities = listItems.filter(item => item.show_in_popular);
-        top_cities.map((product) => {
-            setTimeout(() => {
-                productContainer(container, product.cover_image_url, product.name, product.content, product.id);
-            }, setTimer);
-            setTimer += time;
+        let top_cities = listItems.filter(item => item.show_in_popular);
+        filter_list = top_cities.filter((item, index) => index > start-1 && index < end);
+        filter_list.map((product) => {
+            productContainer(container, product.cover_image_url, product.name, product.content, product.id);
         });
     }
 }

@@ -15,6 +15,7 @@ img {
 }
 
 .header {
+    padding-top: 10px;
     background-color: Black;
 }
 
@@ -180,11 +181,6 @@ img {
     transition: all 0.35s ease;
 }
 
-.city.hidden {
-    opacity: 0;
-    transform: scale(0);
-}
-
 .city:hover {
     transform: scale(0.9);
 }
@@ -274,6 +270,7 @@ img {
     padding: 0px 10px;
     max-height: 0px;
     overflow: hidden;
+    color: #1a7c7b;
     transition: all 0.5s ease;
 }
 
@@ -300,6 +297,37 @@ img {
 }
 
 .modal_button:hover {
+    background-color: white;
+    color: black;
+}
+
+.wrapper__show_button {
+    display: flex;
+    justify-content: center;
+}
+
+#show_button {
+    background-color: black;
+    border: 2px black solid;
+    color: white;
+    margin: 10px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 30px;
+    opacity: 0.6;
+    pointer-events: none;
+    transition: all 0.3s ease-out;
+}
+
+#show_button.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#show_button:hover {
     background-color: white;
     color: black;
 }
