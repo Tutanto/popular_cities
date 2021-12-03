@@ -383,4 +383,48 @@ footer a:hover {
         top: 60%;
     }
 
+    .modal {
+        width: 60%;
+        height: 50%;
+        border: 1px solid black;
+    }
+    
+    .modal img {
+        top: 0;
+        width: 100%;
+        height: 30%;
+    }
+    
+    .modal h3 {
+        top: 35%;
+        font-size: 15px;
+    }
+    
+    .modal .map img {
+        top: 45%;
+        left: 20%;
+        width: 60%;
+        height: 40%;
+    }
+    
+    .modal .map .map-overlay {
+        width: 60%;
+        bottom: 15%;
+        left: 20%;
+        padding: 0px 10px;
+        max-height: 0px;
+    }
+    
+    .modal .map:hover .map-overlay {
+        padding: 10px 10px;
+        max-height: 1000px;
+    }
+    
+    .modal_button {
+        top: 88%;
+        padding: 5px 30px;
+        font-size: 15px;
+        line-height: 15px;
+    }
+
 }
